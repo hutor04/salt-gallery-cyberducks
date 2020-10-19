@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>CSS Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+      <meta charset="UTF-8">
+      <title>Cyberducks' Unsplash Galler</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
     <div class="main-container">
         <header class="main-header">
-            <h1>My new album is out!</h1>
-            <div class="page-description">I'm just out of the sutdio with my new album "New album".
-                Couldn't be prouder over it and I'm happy to share the songs below.
-            </div>
+            <h1>Cyberducks' Unsplash Galleri <i class="fas fa-feather"></i></h1>
+            <div class="page-description">MVP version</div>
         </header>
 
         <section class="search-form">
           <input type="text" id="search-field" placeholder="Enter keyword...">
           <ul id="search-suggestions" >
           </ul>
-          <button id="search-button">Search</button>
+          <button id="search-button"><i class="fas fa-search"></i></button>
         </section>
 
-        <main class="content-container">
-        </main>
-    </div>
+        <main class="content-container"></main>
 
-</body>
+        <div class="pagination-container">
+          <button id="button-prev"><i class="fas fa-chevron-left"></i> Prev</button>
+          <button id="button-next">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <footer class="footer">
+          <p>Cyberducks 2020 <i class="fab fa-github fa-3x"></i></p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  </body>
 </html>

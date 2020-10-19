@@ -1,13 +1,8 @@
 import { setupSearchForm } from './search-handler';
 import { fetchPictures } from './api-client';
 import { drawGallery } from './draw-gallery';
+import { setupPaginationButtons } from './pagination-handler';
 import css from '../public/css/style.css';
-
-let state = {
-  data: {},
-  currentQuery: '',
-  currentPage: 0,
-};
 
 window.addEventListener('querydispatched', () => {
   fetchPictures(state.currentQuery, state.currentPage)});
@@ -19,13 +14,19 @@ window.addEventListener('datafetched', () => {
 });
 
 function setup() {
-  window.state = state;
   setupSearchForm();
   let prevState = localStorage.getItem('state');
   if (prevState) {
-    state = JSON.parse(prevState);
+    window.state = JSON.parse(prevState);
     drawGallery(state.data);
+  } else {
+    window.state = {
+      data: {},
+      currentQuery: '',
+      currentPage: 0,
+    };
   }
+  setupPaginationButtons();
 }
 
 window.onload = setup();

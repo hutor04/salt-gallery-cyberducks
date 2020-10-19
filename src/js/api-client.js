@@ -4,9 +4,9 @@ import { dataFetched } from './state-events';
 
 const endPoint = `${window.location.protocol}//${window.location.host}${config.apiUnsplash}`;
 
-export async function fetchPictures(query, p=1) {
+export async function fetchPictures() {
   try {
-    const data = await axios.get(`${endPoint}/${query}?p=${p}`);
+    const data = await axios.get(`${endPoint}/${state.currentQuery}?p=${state.currentPage}`);
     dataFetched(data.data.results);
   } catch (err) {
     console.log(err);
