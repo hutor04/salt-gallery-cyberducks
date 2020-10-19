@@ -1,4 +1,4 @@
-import { queryDispatched } from './state-events';
+import { dispatchNewQuery } from './state-events';
 
 const searchForm = document.querySelector('#search-field');
 const searchSuggestions = document.querySelector('#search-suggestions');
@@ -63,7 +63,7 @@ function searchSuggestionItemHandler(event) {
 function searchHandler() {
   clearSuggestionList();
   writeQuery(searchForm.value);
-  queryDispatched(searchForm.value);
+  dispatchNewQuery(searchForm.value);
 }
 
 export function setupSearchForm() {

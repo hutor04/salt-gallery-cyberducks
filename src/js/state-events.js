@@ -1,8 +1,6 @@
-export function queryDispatched(query) {
+export function dispatchNewQuery(query) {
   state.currentQuery = query;
   state.currePage = 1;
-  state.prevPage = 0,
-  state.nextPage = 0,
   window.dispatchEvent(new Event('querydispatched'));
 }
 

@@ -7,8 +7,6 @@ let state = {
   data: {},
   currentQuery: '',
   currentPage: 0,
-  prevPage: 0,
-  nextPage: 0,
 };
 
 window.addEventListener('querydispatched', () => {
@@ -16,10 +14,18 @@ window.addEventListener('querydispatched', () => {
 
 window.addEventListener('datafetched', () => {
   drawGallery(state.data);
-  if (state.nextPage < state.data.total_pages) {
-    nextPage = currentPage + 1;
-  }
+  window.history.pushState(state, 'Unsplash Gallery', '/');
+  localStorage.setItem('state', JSON.stringify(state));
 });
 
-window.state = state;
-window.onload = setupSearchForm();
+function setup() {
+  window.state = state;
+  setupSearchForm();
+  let prevState = localStorage.getItem('state');
+  if (prevState) {
+    state = JSON.parse(prevState);
+    drawGallery(state.data);
+  }
+}
+
+window.onload = setup();
