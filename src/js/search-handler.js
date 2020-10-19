@@ -1,3 +1,5 @@
+import { drawGallery } from './draw-gallery';
+
 const searchForm = document.querySelector('#search-field');
 const searchSuggestions = document.querySelector('#search-suggestions');
 const searchButton = document.querySelector('#search-button');
@@ -60,6 +62,7 @@ function searchSuggestionItemHandler(event) {
 
 function searchHandler() {
   writeQuery(searchForm.value);
+  drawGallery(searchForm.value);
 }
 
 export function setup() {
