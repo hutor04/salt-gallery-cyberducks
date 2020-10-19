@@ -1,4 +1,4 @@
-import { drawGallery } from './draw-gallery';
+import { queryDispatched } from './state-events';
 
 const searchForm = document.querySelector('#search-field');
 const searchSuggestions = document.querySelector('#search-suggestions');
@@ -61,11 +61,12 @@ function searchSuggestionItemHandler(event) {
 }
 
 function searchHandler() {
+  clearSuggestionList();
   writeQuery(searchForm.value);
-  drawGallery(searchForm.value);
+  queryDispatched(searchForm.value);
 }
 
-export function setup() {
+export function setupSearchForm() {
   searchButton.addEventListener('click', searchHandler);
   searchForm.addEventListener('keyup', searchFormHandler);
   searchSuggestions.addEventListener('click', searchSuggestionItemHandler);
