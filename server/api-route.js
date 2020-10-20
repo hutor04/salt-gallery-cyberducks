@@ -3,7 +3,6 @@ const express = require('express');
 const Unsplash = require('unsplash-js').default;
 const { toJson } = require('unsplash-js');
 const fetch = require('node-fetch');
-
 global.fetch = fetch;
 const config = require('../config');
 
