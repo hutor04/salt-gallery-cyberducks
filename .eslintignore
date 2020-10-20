@@ -1,4 +1,5 @@
 /node_modules/
+/dist/
 /server/public/javascript/*
 wdio.conf.js
 webpack.config.js

@@ -14,7 +14,7 @@ module.exports = {
     port: 8080,
   },
   entry: {
-    main: path.resolve(__dirname, './src/js/app.js'),
+    main: ["@babel/polyfill", path.resolve(__dirname, './src/js/app.js')],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -39,6 +39,10 @@ module.exports = {
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
