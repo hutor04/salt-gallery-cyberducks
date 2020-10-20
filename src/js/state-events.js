@@ -10,6 +10,6 @@ export function dataFetched(data) {
 }
 
 export function dispatchNewPage(delta) {
-  state.currentPage = state.currentPage + delta;
+  state.currentPage += delta;
   window.dispatchEvent(new Event('querydispatched'));
 }

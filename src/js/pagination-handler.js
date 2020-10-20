@@ -11,7 +11,7 @@ function buttonNextHandler() {
   dispatchNewPage(+1);
 }
 
-export function setupPaginationButtons() {
+export default function setupPaginationButtons() {
   buttonPrev.addEventListener('click', buttonPrevHandler);
   buttonNext.addEventListener('click', buttonNextHandler);
 }

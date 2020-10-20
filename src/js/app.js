@@ -1,11 +1,13 @@
-import { setupSearchForm } from './search-handler';
-import { fetchPictures } from './api-client';
-import { drawGallery } from './draw-gallery';
-import { setupPaginationButtons } from './pagination-handler';
+/* eslint-disable no-unused-vars */
+import setupSearchForm from './search-handler';
+import fetchPictures from './api-client';
+import drawGallery from './draw-gallery';
+import setupPaginationButtons from './pagination-handler';
 import css from '../public/css/style.css';
 
 window.addEventListener('querydispatched', () => {
-  fetchPictures(state.currentQuery, state.currentPage)});
+  fetchPictures(state.currentQuery, state.currentPage);
+});
 
 window.addEventListener('datafetched', () => {
   drawGallery(state.data);
@@ -15,7 +17,7 @@ window.addEventListener('datafetched', () => {
 
 function setup() {
   setupSearchForm();
-  let prevState = localStorage.getItem('state');
+  const prevState = localStorage.getItem('state');
   if (prevState) {
     window.state = JSON.parse(prevState);
     drawGallery(state.data);

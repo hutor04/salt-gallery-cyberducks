@@ -28,11 +28,10 @@ function getQuerySuggestions(newQuery) {
   let queries = localStorage.getItem('queryHistory');
   if (!queries) {
     return [];
-  } else {
-    queries = JSON.parse(queries);
-    const suggestions = queries.filter(el => el.startsWith(query));
-    return suggestions;
   }
+  queries = JSON.parse(queries);
+  const suggestions = queries.filter(el => el.startsWith(query));
+  return suggestions;
 }
 
 function clearSuggestionList() {
@@ -46,7 +45,7 @@ function searchFormHandler() {
   const querySuggestions = getQuerySuggestions(currentValue);
   clearSuggestionList();
   querySuggestions.forEach(query => {
-    let newItem = document.createElement('li');
+    const newItem = document.createElement('li');
     newItem.innerText = query;
     searchSuggestions.appendChild(newItem);
   });
@@ -66,7 +65,7 @@ function searchHandler() {
   dispatchNewQuery(searchForm.value);
 }
 
-export function setupSearchForm() {
+export default function setupSearchForm() {
   searchButton.addEventListener('click', searchHandler);
   searchForm.addEventListener('keyup', searchFormHandler);
   searchSuggestions.addEventListener('click', searchSuggestionItemHandler);

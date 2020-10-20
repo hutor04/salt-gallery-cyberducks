@@ -1,11 +1,11 @@
 const cardsContainer = document.querySelector('.content-container');
 
-export async function drawGallery(data) {
+export default async function drawGallery(data) {
   while (cardsContainer.firstChild) {
     cardsContainer.removeChild(cardsContainer.lastChild);
   }
   data.forEach(el => {
-    let card = document.createElement('article');
+    const card = document.createElement('article');
     card.className += 'card';
     card.innerHTML = `
     <img class="card-image" src="${el.urls.regular}">
