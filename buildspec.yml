@@ -1,0 +1,26 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - curl -sL https://deb.nodesource.com/setup_14.x | bash -
+      - apt install -y nodejs
+  pre_build:
+    commands:
+      - echo Installing dependencies
+      - npm install
+  build:
+    commands:
+      - echo Performing tests...
+      - npm run lint
+      - npm run test
+      - echo Perfomring build...
+      - npm run build
+
+artifacts:
+  files:
+    - dist/**/*
+    - server/**/*
+    - config.js
+    - index.js
+
