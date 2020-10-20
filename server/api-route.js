@@ -3,8 +3,10 @@ const express = require('express');
 const Unsplash = require('unsplash-js').default;
 const { toJson } = require('unsplash-js');
 const fetch = require('node-fetch');
-global.fetch = fetch;
 const config = require('../config');
+
+global.fetch = fetch;
+
 const router = express.Router();
 
 const unsplash = new Unsplash({ accessKey: config.unsplash.accesskey });
