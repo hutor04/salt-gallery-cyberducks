@@ -11,16 +11,12 @@ phases:
       - npm install
   build:
     commands:
-      - echo Performing tests...
-      - npm run lint
-      - npm run test
       - echo Perfomring build...
       - npm run build
 
 artifacts:
   files:
-    - dist/**/*
-    - server/**/*
-    - config.js
-    - index.js
+    - "**/*""
+  discard-paths: no
+  base-directory: dist
 

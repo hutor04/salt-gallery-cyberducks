@@ -4,7 +4,7 @@ export default async function drawGallery(data) {
   while (cardsContainer.firstChild) {
     cardsContainer.removeChild(cardsContainer.lastChild);
   }
-  data.forEach(el => {
+  data.results.forEach(el => {
     const card = document.createElement('article');
     card.className += 'card';
     card.innerHTML = `
