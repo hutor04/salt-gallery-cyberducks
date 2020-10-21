@@ -3,13 +3,12 @@ const express = require('express');
 const Unsplash = require('unsplash-js').default;
 const { toJson } = require('unsplash-js');
 const fetch = require('node-fetch');
-const config = require('../config');
 
 global.fetch = fetch;
 
 const router = express.Router();
 
-const unsplash = new Unsplash({ accessKey: config.unsplash.accesskey });
+const unsplash = new Unsplash({ accessKey: process.env.ACCESSKEY });
 
 router.get('/:query', (req, res) => {
   const pageNumber = req.query.p ? req.query.p : 1;
