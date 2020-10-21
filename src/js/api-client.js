@@ -9,7 +9,8 @@ global.fetch = fetch;
 const unsplash = new Unsplash({ accessKey: config.unsplash.accesskey });
 
 export default async function fetchPictures() {
-  unsplash.search.photos(state.currentQuery, state.currentPage, 10, { orientation: 'portrait' })
+  const galleryIdx = state.findIndex(x => x.name === 'gallery');
+  unsplash.search.photos(state[galleryIdx].currentQuery, state[galleryIdx].currentPage, 10, { orientation: 'portrait' })
     .then(toJson)
     .then(json => {
       const imageDataFiltered = json.results.map(result => ({

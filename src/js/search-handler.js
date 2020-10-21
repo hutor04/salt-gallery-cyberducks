@@ -65,8 +65,19 @@ function searchHandler() {
   dispatchNewQuery(searchForm.value);
 }
 
+function hideSearchSuggestions() {
+  searchSuggestions.style.display = 'none';
+}
+
+function showSearchSuggestions() {
+  searchSuggestions.style.display = 'flex';
+}
+
 export default function setupSearchForm() {
   searchButton.addEventListener('click', searchHandler);
   searchForm.addEventListener('keyup', searchFormHandler);
   searchSuggestions.addEventListener('click', searchSuggestionItemHandler);
+  searchForm.addEventListener('focus', showSearchSuggestions);
+  searchForm.addEventListener('click', showSearchSuggestions);
+  window.addEventListener('scroll', hideSearchSuggestions);
 }

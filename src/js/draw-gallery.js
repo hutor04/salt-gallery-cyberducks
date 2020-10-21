@@ -8,11 +8,13 @@ export default async function drawGallery(data) {
     const card = document.createElement('article');
     card.className += 'card';
     card.innerHTML = `
-    <img class="card-image" src="${el.urls.regular}">
     <div class="card-body">
-        <div class="card-content">
-          ${el.alt_description}
-        </div>
+      <div class="card-front">
+        <img class="card-image" src="${el.urls.regular}">
+      </div>
+      <div class="card-back">
+        <p>${el.alt_description}</p>
+      </div>
     </div>
     `;
     cardsContainer.appendChild(card);

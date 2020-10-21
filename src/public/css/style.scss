@@ -1,0 +1,274 @@
+body {
+  margin: 0 0 0 0;
+  font-family: Roboto, sans-serif;
+  background-color: #E5E5E5;
+}
+/* Container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100wh;
+}
+
+/* Header BEGIN */
+.main-header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  background-color: white;
+  z-index: 10;
+}
+
+.page-description {
+  width: 35vw;
+  text-align: center;
+  font-size: x-large;
+}
+/* Header END */
+.content-page {
+  margin-top: 14vh;
+  padding-top: 2vh;
+  margin-left: 4vw;
+  margin-right: 4vw;
+  min-height: 72vh;
+}
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 14vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+#search-field {
+  display: flex;
+  flex-direction: row;
+  width: 15rem;
+  height: 2rem;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-right-style: none;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#search-button {
+  width: 2.5rem;
+  border-style: solid;
+  border-width: 1px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#search-suggestions {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 3px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: absolute;
+  background-color: white;
+  opacity: 0.8;
+  width: 15rem;
+  z-index: 2;
+}
+#search-suggestions li {
+  list-style-type: none;
+  line-height: 1.6;
+  padding-left: 10px;
+}
+#search-suggestions li:hover {
+  background-color: lightgray;
+  color: white;
+}
+
+/* Content Container */
+
+/* Card BEGIN */
+
+:root { --time: 0.707s; }
+
+.content-container {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-auto-rows: 1fr;
+  padding: 3rem;
+  background: whitesmoke;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.card {
+  perspective: 40rem;
+}
+
+.card-body {
+  display: flex;
+  transform-style: preserve-3d;
+  transition: var(--time) transform;
+
+  .card:hover &, .card:focus & {
+    transform: rotateX(-180deg);
+  }
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  min-width: 100%;
+}
+
+.card-back {
+  transform: rotateX(-180deg) translate(-100%, 0);
+}
+
+/* Make it Pretty */
+
+
+.card {
+  display: flex;
+  transition: z-index, transform calc(var(--time) / 4);
+  transition-delay: var(--time), 0s;
+  text-decoration: none;
+  color: inherit;
+  z-index: 0;
+  
+  &:hover {
+    transition-delay: 0s;
+    z-index: 1;
+  }
+
+  &:active {
+    transform: scale(0.975);
+  }
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card-body {
+  border-radius: 0.25rem;
+  flex: 1;
+}
+
+.card-front, .card-back {
+  @extend .shadow;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+}
+
+.card-front {
+  font-size: 1.5rem;
+}
+
+.shadow {
+  box-shadow: 0 -1px 1px rgba(0,0,0,0.04), 
+              0 2px 2px rgba(0,0,0,0.04), 
+              0 4px 4px rgba(0,0,0,0.04), 
+              0 8px 8px rgba(0,0,0,0.04),
+              0 16px 16px rgba(0,0,0,0.04); 
+}
+
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.button-group a {
+  border: 2px solid dimgray;
+  padding: 5px 5px 5px 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: small;
+  color: dimgray;
+}
+
+.button-group a:not(:last-child) {
+  border-right: none;
+}
+
+.button-group a:first-child {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.button-group a:last-child {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.small-text {
+  font-size: small;
+}
+/* Card END*/
+
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 2rem;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.pagination-container button:first-child {
+  margin-right: 10px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: white;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.menu div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.about:link {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.about:visited {
+  text-decoration: none;
+}
+
+.about:hover {
+  text-decoration: none;
+  color: gray;
+  letter-spacing: 2px;
+}
+
+.about:active {
+  text-decoration: none;
+}

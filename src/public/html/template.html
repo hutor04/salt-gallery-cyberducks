@@ -11,22 +11,32 @@
     <div class="main-container">
         <header class="main-header">
             <h1>Cyberducks' Unsplash Galleri <i class="fas fa-feather"></i></h1>
-            <div class="page-description">MVP version</div>
+            <div class="menu">
+                <div class= "about" id="gallery">Gallery</div>|
+                <div class= "about" id="about">About</div>
+            </div>
         </header>
+        
+        <div class="content-page">
+          <h2></h2>
+          <div class="text"></div>
+        </div>
 
-        <section class="search-form">
-          <div class="search-field">
-            <input type="text" id="search-field" placeholder="Enter keyword...">
-            <div id="search-suggestions"></div>
+        <div class="gallery">
+          <section class="search-form">
+            <div class="search-field">
+              <input type="text" id="search-field" placeholder="Enter keyword...">
+              <div id="search-suggestions"></div>
+            </div>
+            <button id="search-button"><i class="fas fa-search"></i></button>      
+          </section>
+  
+          <main class="content-container"></main>
+  
+          <div class="pagination-container">
+            <button id="button-prev"><i class="fas fa-chevron-left"></i> Prev</button>
+            <button id="button-next">Next <i class="fas fa-chevron-right"></i></button>
           </div>
-          <button id="search-button"><i class="fas fa-search"></i></button>      
-        </section>
-
-        <main class="content-container"></main>
-
-        <div class="pagination-container">
-          <button id="button-prev"><i class="fas fa-chevron-left"></i> Prev</button>
-          <button id="button-next">Next <i class="fas fa-chevron-right"></i></button>
         </div>
 
         <footer class="footer">
