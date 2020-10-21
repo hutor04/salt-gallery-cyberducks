@@ -1,5 +1,4 @@
 require('dotenv').config();
-const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const unsplash = require('./api-route');
@@ -10,7 +9,9 @@ const port = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use('/api/unsplash', unsplash);
-app.use('/', express.static(path.join(__dirname, '../dist')));
+app.use((req, res) => {
+  res.status(404).json({ error: 'Not found.' });
+});
 
 module.exports.app = app;
 if (!module.parent) { app.listen(port); }
