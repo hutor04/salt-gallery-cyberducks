@@ -6,7 +6,7 @@ import setupPaginationButtons from './pagination-handler';
 import css from '../public/css/style.css';
 
 window.addEventListener('querydispatched', () => {
-  fetchPictures(state.currentQuery, state.currentPage);
+  fetchPictures();
 });
 
 window.addEventListener('datafetched', () => {
