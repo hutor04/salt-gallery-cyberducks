@@ -5,7 +5,7 @@ const unsplash = require('./api-route');
 
 const app = express();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 80;
 
 app.use(bodyParser.json());
 app.use('/api/unsplash', unsplash);
