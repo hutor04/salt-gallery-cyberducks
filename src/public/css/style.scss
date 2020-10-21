@@ -254,21 +254,8 @@ body {
   margin-left: 5px;
 }
 
-.about:link {
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.about:visited {
-  text-decoration: none;
-}
-
-.about:hover {
+.menu *:hover {
   text-decoration: none;
   color: gray;
   letter-spacing: 2px;
-}
-
-.about:active {
-  text-decoration: none;
 }

@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
 import Unsplash, { toJson } from 'unsplash-js';
 import fetch from 'node-fetch';
-import { dataFetched } from './state-events';
-import config from './config';
+import { dataFetched } from '../state-events';
 
 global.fetch = fetch;
 
-const unsplash = new Unsplash({ accessKey: config.unsplash.accesskey });
+const unsplash = new Unsplash({ accessKey: process.env.ACCESS_KEY });
 
 export default async function fetchPictures() {
   const galleryIdx = state.findIndex(x => x.name === 'gallery');

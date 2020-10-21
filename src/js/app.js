@@ -17,6 +17,7 @@ menu.addEventListener('click', e => {
   }));
   state[pageIdx].active = true;
   localStorage.setItem('state', JSON.stringify(state));
+  window.history.pushState(state, 'Unsplash Gallery', '/');
   reDrawApp();
 });
 

@@ -4,9 +4,11 @@
   "description": "Group Project. Week 7.",
   "main": "index.js",
   "dependencies": {
-    "unsplash-js": "^6.3.0",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1",
-    "body-parser": "^1.19.0"
+    "unsplash-js": "^6.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -18,6 +20,7 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.0",
+    "dotenv-webpack": "^4.0.0",
     "eslint": "^7.11.0",
     "eslint-config-salt": "^1.1.0",
     "html-webpack-plugin": "^4.5.0",
@@ -33,10 +36,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "start-dev": "webpack serve",
+    "start-dev": "NODE_ENV=development webpack serve",
     "test": "jest --coverage",
     "lint": "eslint '**/*.js'",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "lint-watch": "nodemon --exec 'npm run lint --silent'"
   },
   "repository": {
