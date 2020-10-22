@@ -8,7 +8,7 @@ global.fetch = fetch;
 
 const router = express.Router();
 
-const unsplash = new Unsplash({ accessKey: process.env.ACCESSKEY });
+const unsplash = new Unsplash({ accessKey: process.env.ACCESS_KEY });
 
 router.get('/:query', (req, res) => {
   const pageNumber = req.query.p ? req.query.p : 1;
