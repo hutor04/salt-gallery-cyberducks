@@ -8,7 +8,7 @@ const app = express();
 
 const port = process.env.PORT || 80;
 
-app.use(cors());
+//app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/unsplash', unsplash);
 app.use((req, res) => {
