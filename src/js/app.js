@@ -17,7 +17,6 @@ menu.addEventListener('click', e => {
   }));
   state[pageIdx].active = true;
   localStorage.setItem('state', JSON.stringify(state));
-  window.history.pushState(state, 'Unsplash Gallery', '/');
   reDrawApp();
 });
 
@@ -28,7 +27,6 @@ window.addEventListener('querydispatched', () => {
 window.addEventListener('datafetched', () => {
   const gallery = state.find(x => x.name === 'gallery');
   drawGallery(gallery.data);
-  window.history.pushState(state, 'Unsplash Gallery', '/');
   localStorage.setItem('state', JSON.stringify(state));
   buttonDisabler();
 });

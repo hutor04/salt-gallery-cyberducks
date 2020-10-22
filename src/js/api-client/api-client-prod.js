@@ -2,13 +2,14 @@
 import axios from 'axios';
 import { dataFetched } from '../state-events';
 
-const endPoint = 'https://limitless-hollows-13414.herokuapp.com';
+const endPoint = 'https://limitless-hollows-13414.herokuapp.com/api/unsplash';
 
-export default async function fetchPictures() {
-  try {
-    const data = await axios.get(`${endPoint}/${state.currentQuery}?p=${state.currentPage}`);
-    dataFetched(data.data.results);
-  } catch (err) {
-    console.log(err);
-  }
+export default function fetchPictures() {
+  const galleryIdx = state.findIndex(x => x.name === 'gallery');
+  axios.get(`${endPoint}/${state[galleryIdx].currentQuery}?p=${state[galleryIdx].currentPage}`, { crossdomain: true })
+    .then(x => {
+      dataFetched(x.data.results);
+      console.log(x);
+    })
+    .catch(err => { console.log(err); });
 }

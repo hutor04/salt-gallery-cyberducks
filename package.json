@@ -39,7 +39,7 @@
     "start-dev": "NODE_ENV=development webpack serve",
     "test": "jest --coverage",
     "lint": "eslint '**/*.js'",
-    "build": "NODE_ENV=production webpack",
+    "build": "webpack",
     "lint-watch": "nodemon --exec 'npm run lint --silent'"
   },
   "repository": {
